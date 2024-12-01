@@ -16,3 +16,13 @@ class Courses(models.Model):
     class Meta:
         managed = False
         db_table = 'courses'
+
+
+class Teacher(models.Model):
+    name  = models.CharField(max_length=50)
+    about = models.CharField(max_length=250)
+    image = models.ImageField(upload_to='courses_images/', blank=True, null=True)
+    active=models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
