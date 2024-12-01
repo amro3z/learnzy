@@ -1,0 +1,101 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+
+    <title>online course</title>
+</head>
+<body>
+    <nav class="flex_r">
+        <div class="nav flex_around">
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#courses">courses</a>
+        </div>
+        <div class="nav flex_around">
+            <a href="#teachers">Teachers</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    <header>
+        <section class="hero" id="hero">
+            <h1>Welcome Back!</h1>
+        </section>
+    </header>
+    <main>
+        <section class="g15 flex_c" id="about">
+            <h1>About Us</h1>
+            <p>Here to help you grow
+                Whether you're looking to build your business, develop your career, or learn new AI skills, we can help you get started.</p>
+        </section>
+        <section class="g40 flex_c" id="courses">
+            <h1>Our Courses</h1>
+            <div class="flex_r g40">
+                <!-- Course 1 -->
+                 {% for x in course %}
+                <div class="course-card">
+                    
+                    <img src="{{x.image.url}}" alt="" class="course-image">
+                    <h2>{{x.title}}</h2>
+                    <p>{{x.description}}</p>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </section>
+        
+
+        <section class="g40 flex_c" id="teachers">
+            <h1>Our Teachers</h1>
+            <div class="flex_r g40">
+                <div class="w185 g15 flex_c">
+                    <img src="{% static 'image/teacher_1.jpg' %}" alt="teacher" class="w100">
+                    <h2>Teacher Name</h2>
+                    <div>
+                        <p>Brief about the teacher and their qualificatios</p>
+                        <p>contact onformation</p>
+                    </div>
+                </div>
+                <div class="w185 g15 flex_c">
+                    <img src="{% static 'image/teacher_2.jpg' %}" alt="teacher" class="w100">
+                    <h2>Teacher Name</h2>
+                    <div>
+                        <p>Brief about the teacher and their qualificatios</p>
+                        <p>contact onformation</p>
+                    </div>
+                </div>
+                <div class="w185 g15 flex_c">
+                    <img src="{% static 'image/teacher_3.jpg' %}" alt="teacher" class="w100">
+                    <h2>Teacher Name</h2>
+                    <div>
+                        <p>Brief about the teacher and their qualificatios</p>
+                        <p>contact onformation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex_c g40" id="contact">
+          
+            <div class="flex_c g15">
+                <h1>Contact Info</h1>
+                <div>
+                    <p>Email: ahmed.magdy@gmail.com</p>
+                    <p>Phone: +201013730323</p><br>
+                    <p>Email: hafes44@gmail.com</p>
+                    <p>Phone: +201030532614</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
