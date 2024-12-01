@@ -233,3 +233,19 @@ form{
     background-color: #5990ad;
     color: #fff;
 }
+
+
+.auth-links {
+    display: flex;
+    gap: 15px;
+}
+
+.auth-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}

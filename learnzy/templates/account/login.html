@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="form-wrapper">
+            <h1 id="auth-title">Welcome Back</h1>
+            <p id="auth-description">Please login to your account</p>
+            
+            <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <!-- Login Form -->
+                <div id="login-form">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn">Login</button>
+                </div>
+            </form>
+
+            <p class="switch">
+                Don’t have an account? <a href="{% url 'register' %}" id="toggle-form">Register here</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Toggle form between login and register (Optional, if you want to allow switching)
+        const toggleForm = document.getElementById('toggle-form');
+        const loginForm = document.getElementById('login-form');
+        
+        toggleForm.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = "{% url 'register' %}";
+        });
+    </script>
+</body>
+</html>
