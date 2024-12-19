@@ -1,17 +1,18 @@
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Course</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
 </head>
+
 <body>
-    <nav class="flex_r">
-        <div class="nav flex_around">
+    <nav>
+        <div>
             <a href="#hero">Home</a>
             <a href="#about">About</a>
             <a href="#courses">Courses</a>
@@ -19,73 +20,62 @@
         <div class="nav flex_around">
             <a href="#teachers">Teachers</a>
             <a href="#contact">Contact</a>
-        </div>
-
-        
-        <div class="auth-links">
             {% if user.is_authenticated %}
-                
-                <a href="{% url 'logout' %}">Logout</a>
+                <a href="{% url 'logout' %}" class="logout-link">Logout</a>
             {% else %}
-                
                 <a href="{% url 'login' %}">Login</a>
                 <a href="{% url 'register' %}">Register</a>
             {% endif %}
         </div>
     </nav>
 
-    <header>
-        <section class="hero" id="hero">
-            <h1>Welcome Back!</h1>
-        </section>
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <h1>Welcome Back!</h1>
     </header>
 
-    <main>
-        <section class="g15 flex_c" id="about">
-            <h1>About Us</h1>
-            <p>Here to help you grow. Whether you're looking to build your business, develop your career, or learn new AI skills, we can help you get started.</p>
-        </section>
-
-        <section class="g40 flex_c" id="courses">
-            <h1>Our Courses</h1>
-            <div class="flex_r g40">
-                {% for x in course %}
-                    <div class="course-card">
-                        <img src="{{x.image.url}}" alt="" class="course-image">
-                        <h2>{{x.title}}</h2>
-                        <p>{{x.description}}</p>
-                        <a href="#" class="btn btn-outline">Learn More</a>
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
-
-        <section class="g40 flex_c" id="teachers">
-            <h1>Our Teachers</h1>
-            <div class="flex_r g40">
-                {% for x in teacher %}
-                    <div class="w185 g15 flex_c">
-                        <img src="{{x.image.url}}" alt="" class="w100">
-                        <h2>{{x.name}}</h2>
-                        <div>
-                            <p>{{x.about}}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
-
-        <section class="flex_c g40" id="contact">
-            <div class="flex_c g15">
-                <h1>Contact Info</h1>
-                <div>
-                    <p>Email: ahmed.magdy@gmail.com</p>
-                    <p>Phone: +201013730323</p><br>
-                    <p>Email: hafes44@gmail.com</p>
-                    <p>Phone: +201030532614</p>
+    <!-- Courses Section -->
+    <section id="courses">
+        <h1>Our Courses</h1>
+        <div class="card-container">
+            {% for x in course %}
+                <div class="card">
+                    <img src="{{ x.image.url }}" alt="">
+                    <h2>{{ x.title }}</h2>
+                    <p>{{ x.description }}</p>
+                    <a href="{% url 'course' x.id  %}">Learn More</a>
                 </div>
-            </div>
-        </section>
-    </main>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Teachers Section -->
+    <section id="teachers">
+        <h1>Our Teachers</h1>
+        <div class="card-container">
+            {% for x in teacher %}
+                <div class="card teacher-card">
+                    <img src="{{ x.image.url }}" alt="">
+                    <h2>{{ x.name }}</h2>
+                    <p>{{ x.about }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <form class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" rows="5" placeholder="Write your message here" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
 </body>
+
 </html>

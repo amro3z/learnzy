@@ -13,3 +13,11 @@ def index(requset):
         'teacher':teacher
         }
     return render(requset ,'home/inedx.html', context)
+
+
+def course_info(requset, pk):
+
+    course_info = Courses.objects.get(id=pk)
+
+
+    return render(requset ,'home/course.html', {'course_info':course_info} )
