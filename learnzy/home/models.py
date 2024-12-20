@@ -26,3 +26,16 @@ class Teacher(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+
+
+class Enrollments(models.Model):
+    enrollment_id = models.AutoField(primary_key=True)
+    username = models.CharField(max_length=50)
+    course_id = models.IntegerField()
+    enrolled_at = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'enrollments'

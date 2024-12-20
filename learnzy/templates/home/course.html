@@ -169,18 +169,28 @@
         </p>
 
         <!-- Video Section with Lock -->
-        <div class="video-panel locked" id="video-panel">
+        <div class="video-panel {% if is_enrolled %}unlocked{% else %}locked{% endif %}" id="video-panel">
             <iframe 
                 src="{{ course_info.video_url }}" 
-                title="Building Websites"
+                title="Course video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
+            {% if not is_enrolled %}
             <div class="lock-message">Please enroll to unlock the video</div>
+            {% endif %}
         </div>
 
-        <!-- Enroll Button -->
-        <button class="enroll-btn" id="enroll-btn">Enroll in this Course</button>
+        {% if not is_enrolled %}
+        <form method="post" action="{% url 'enroll_in_course' course_info.id %}">
+            {% csrf_token %}
+            <button type="submit" class="enroll-btn">Enroll in this Course</button>
+        </form>
+    {% else %}
+        <button class="enroll-btn" disabled>Enrolled!</button>
+    {% endif %}
+   
+   
     </div>
 
     <!-- Footer -->
