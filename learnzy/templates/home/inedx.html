@@ -16,15 +16,18 @@
             <a href="#hero">Home</a>
             <a href="#about">About</a>
             <a href="#courses">Courses</a>
+
+
         </div>
         <div class="nav flex_around">
             <a href="#teachers">Teachers</a>
             <a href="#contact">Contact</a>
+            <a href="{% url 'profile' %}">Profile</a>
             {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}" class="logout-link">Logout</a>
+            <a href="{% url 'logout' %}" class="logout-link">Logout</a>
             {% else %}
-                <a href="{% url 'login' %}">Login</a>
-                <a href="{% url 'register' %}">Register</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
             {% endif %}
         </div>
     </nav>
@@ -39,12 +42,12 @@
         <h1>Our Courses</h1>
         <div class="card-container">
             {% for x in course %}
-                <div class="card">
-                    <img src="{{ x.image.url }}" alt="">
-                    <h2>{{ x.title }}</h2>
-                    <p>{{ x.description }}</p>
-                    <a href="{% url 'course' x.id  %}">Learn More</a>
-                </div>
+            <div class="card">
+                <img src="{{ x.image.url }}" alt="">
+                <h2>{{ x.title }}</h2>
+                <p>{{ x.description }}</p>
+                <a href="{% url 'course' x.id   %}">Learn More</a>
+            </div>
             {% endfor %}
         </div>
     </section>
@@ -54,11 +57,11 @@
         <h1>Our Teachers</h1>
         <div class="card-container">
             {% for x in teacher %}
-                <div class="card teacher-card">
-                    <img src="{{ x.image.url }}" alt="">
-                    <h2>{{ x.name }}</h2>
-                    <p>{{ x.about }}</p>
-                </div>
+            <div class="card teacher-card">
+                <img src="{{ x.image.url }}" alt="">
+                <h2>{{ x.name }}</h2>
+                <p>{{ x.about }}</p>
+            </div>
             {% endfor %}
         </div>
     </section>
