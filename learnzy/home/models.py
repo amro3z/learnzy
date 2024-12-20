@@ -6,7 +6,6 @@ class Courses(models.Model):
     description = models.TextField(blank=True, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     instructor_id = models.IntegerField()
-    category_id = models.IntegerField()
     video_url = models.CharField(max_length=255, blank=True, null=True)
     image = models.ImageField(upload_to='courses_images/', blank=True, null=True)
     created_at = models.DateTimeField(blank=True, null=True)

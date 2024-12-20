@@ -101,7 +101,7 @@
             {% for course in enrolled_courses %}
             <li>
                 <h3>{{ course.title }}</h3>
-                <a href="course{{ course.id }}.html">Go to Course</a>
+                <a href="{% url 'course' course.id   %}">Go to Course</a>
             </li>
             {% endfor %}
         </ul>

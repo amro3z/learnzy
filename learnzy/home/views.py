@@ -63,7 +63,7 @@ def profile(request):
         'user': user,  # بيانات المستخدم
         'enrolled_courses': enrolled_courses  # الكورسات المرتبطة
     }
-    return render(request, 'profile/profile.html', context)
+    return render(request, 'home/profile.html', context)
 
 
 

@@ -1,36 +1,41 @@
-
+/* Base Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #5990ad, #f4f4f4);
+    background: linear-gradient(135deg, #1e1e1e, #000000); /* Updated for dark mode */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #333;
+    color: #4db8ff; /* Updated for dark mode */
+    transition: background 0.3s, color 0.3s;
 }
 
 .auth-container {
-    background: #fff;
+    background: #2b2b2b; /* Updated for dark mode */
     width: 90%;
     max-width: 400px;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Updated for dark mode */
     text-align: center;
+    color: #4db8ff; /* Updated for dark mode */
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .auth-container h1 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    color: #333;
+    color: #4db8ff; /* Updated for dark mode */
+    transition: color 0.3s;
 }
 
 .auth-container p {
     font-size: 1rem;
     margin-bottom: 20px;
-    color: #666;
+    color: #4db8ff; /* Updated for dark mode */
+    transition: color 0.3s;
 }
 
 .auth-container .input-group {
@@ -42,17 +47,20 @@ body {
     font-size: 0.9rem;
     margin-bottom: 5px;
     display: block;
-    color: #555;
+    color: #4db8ff; /* Updated for dark mode */
+    transition: color 0.3s;
 }
 
 .auth-container .input-group input {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
-    border: 1px solid #ddd;
+    background: #333; /* Updated for dark mode */
+    color: #f0f0f0; /* Updated for dark mode */
+    border: 1px solid #555; /* Updated for dark mode */
     border-radius: 8px;
     outline: none;
-    transition: border 0.3s;
+    transition: border 0.3s, background 0.3s, color 0.3s;
 }
 
 .auth-container .input-group input:focus {
@@ -60,19 +68,23 @@ body {
 }
 
 .auth-container .btn {
-    width: 100%;
+    width: auto;
+    display: inline-block;
     padding: 12px;
     font-size: 1rem;
-    background-color: #5990ad;
+    background-color: #46738d; /* Updated for dark mode */
     color: white;
     border: none;
     border-radius: 8px;
+    text-decoration: none;
     cursor: pointer;
+    font-weight: bold;
     transition: background 0.3s;
+    text-align: center;
 }
 
 .auth-container .btn:hover {
-    background-color: #46738d;
+    background-color: #35586a; /* Updated for dark mode */
 }
 
 .auth-container .switch {
@@ -81,9 +93,10 @@ body {
 }
 
 .auth-container .switch a {
-    color: #5990ad;
+    color: #77a7c4; /* Updated for dark mode */
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .auth-container .switch a:hover {
