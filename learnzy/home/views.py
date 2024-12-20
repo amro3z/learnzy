@@ -2,9 +2,10 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.timezone import now
 from django.contrib.auth.decorators import login_required
 from .models import Courses, Enrollments
-# from .models import Courses
+from django.core.mail import send_mail
+from django.contrib import messages
 from .models import Teacher
-# Create your views here.
+
 
 @login_required(login_url='/account/login/')
 def index(requset):
@@ -68,7 +69,24 @@ def profile(request):
 
 
 
-
+def contact_view(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        
+        # Send email (or save to database)
+        send_mail(
+            f'Message from {name}',  # Subject
+            message,  # Message
+            email,  # From email
+            ['your_email@example.com'],  # To email
+        )
+        
+        messages.success(request, 'Your message has been sent successfully!')
+        return redirect('index')
+    
+    return render(request, 'home/inedx.html')
 
 
 
