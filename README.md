@@ -44,9 +44,9 @@ The platform includes functionalities such as course browsing and contact suppor
 - Passwords must be encrypted before storage.
   
 ## Use Case Diagram
-###![_مخطط دون اسم_ drawio](https://github.com/user-attachments/assets/99726c42-f003-47a4-babe-c0d511fdcd70)
+![_مخطط دون اسم_ drawio](https://github.com/user-attachments/assets/99726c42-f003-47a4-babe-c0d511fdcd70)
 ## Class Diagram
-### ![WhatsApp Image 2024-12-20 at 16 52 21_75a1530d](https://github.com/user-attachments/assets/f0dab31b-9032-42eb-9860-6c30f5d26250)
+ ![WhatsApp Image 2024-12-20 at 16 52 21_75a1530d](https://github.com/user-attachments/assets/f0dab31b-9032-42eb-9860-6c30f5d26250)
 
 
 
