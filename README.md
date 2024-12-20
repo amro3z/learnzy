@@ -48,5 +48,9 @@ The platform includes functionalities such as course browsing and contact suppor
 ## Class Diagram
  ![WhatsApp Image 2024-12-20 at 16 52 21_75a1530d](https://github.com/user-attachments/assets/f0dab31b-9032-42eb-9860-6c30f5d26250)
 
+ ## Sequance Diagram
+ ![image](https://github.com/user-attachments/assets/e5261e1c-4ac7-40b8-b1a7-b991ad43a2e9)
+
+
 
 
