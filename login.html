@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <title>Login or Register</title>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="form-wrapper">
+            <h1 id="auth-title">Welcome Back</h1>
+            <p id="auth-description">Please login or create a new account</p>
+            
+            <form id="auth-form" action="index2.html">
+                <!-- Login Form -->
+                <div id="login-form">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn">Login</button>
+                </div>
+
+                <!-- Registration Form (hidden by default) -->
+                <div id="register-form" style="display: none;">
+                    <div class="input-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="email-register">Email</label>
+                        <input type="email" id="email-register" name="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password-register">Password</label>
+                        <input type="password" id="password-register" name="password" placeholder="Create a password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn">Register</button>
+                </div>
+            </form>
+
+            <p class="switch">
+                Don’t have an account? <a href="#" id="toggle-form">Register here</a>
+            </p>
+
+            <!-- New Button for Instructor Login/Registration -->
+            <div class="instructor-option" style="margin-top: 20px; text-align: center;">
+                <p>Are you an instructor?</p>
+                <a href="instructor_login.html" class="btn">Login/Register as Instructor</a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between login and register
+        const toggleForm = document.getElementById('toggle-form');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const authTitle = document.getElementById('auth-title');
+        const authDescription = document.getElementById('auth-description');
+
+        toggleForm.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                authTitle.textContent = 'Welcome Back';
+                authDescription.textContent = 'Please login to your account';
+                toggleForm.textContent = "Don’t have an account? Register here";
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                authTitle.textContent = 'Create Account';
+                authDescription.textContent = 'Please fill in your details to register';
+                toggleForm.textContent = "Already have an account? Login here";
+            }
+        });
+    </script>
+</body>
+</html>

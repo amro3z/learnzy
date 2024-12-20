@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Courses</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #121212; /* Dark background */
+            color: #dcdcdc; /* Light gray text */
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #0a0f2e;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            color: #dcdcdc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #4db8ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(to bottom, #0a0f2e, #1c1c1c);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Section Styling */
+        section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #4db8ff;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .card {
+            background: #1c1c1c;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .card h2 {
+            color: #4db8ff;
+            font-size: 1.3rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .card p {
+            padding: 0 1rem 1.5rem;
+            font-size: 0.9rem;
+            color: #cfcfcf;
+        }
+
+        .card a {
+            display: inline-block;
+            background-color: #4db8ff;
+            color: #121212;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* Teachers Section */
+        .teacher-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            background: #1c1c1c;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #4db8ff;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 1.5rem;
+            background: #121212;
+            border: 1px solid #4db8ff;
+            border-radius: 5px;
+            color: #dcdcdc;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #4db8ff;
+            color: #121212;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0f2e;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div>
+            <a href="#hero">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#teachers">Teachers</a>
+            <a href="profile.html">Profile</a> 
+        </div>
+        <div>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <h1>Welcome Back!</h1>
+    </header>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <h1>Our Courses</h1>
+        <div class="card-container">
+            <div class="card">
+                <img src="assets/img/download.jpeg" alt="Web Development">
+                <h2>Web Development Basics</h2>
+                <p>Learn the basics of web development and create your first website.</p>
+                <a href="course1.html">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="assets/img/download (1).jpeg" alt="JavaScript Concepts">
+                <h2>JavaScript Concepts</h2>
+                <p>Explore advanced JavaScript and build dynamic applications.</p>
+                <a href="course2.html">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="assets/img/download (2).jpeg" alt="Python Concepts">
+                <h2>Python Concepts</h2>
+                <p>Master Python for data analysis and machine learning applications.</p>
+                <a href="course3.html">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="assets/img/react.jpeg" alt="React Concepts">
+                <h2>React Concepts</h2>
+                <p>Learn the fundamentals of mobile app development using React Native.</p>
+                <a href="course4.html">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="assets/img/bootstrab.jpeg" alt="Building Websites">
+                <h2>Building Websites</h2>
+                <p>Build responsive websites using HTML, CSS, and Bootstrap.</p>
+                <a href="course5.html">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachers Section -->
+    <section id="teachers">
+        <h1>Our Teachers</h1>
+        <div class="card-container">
+            <div class="card teacher-card">
+                <img src="./assets/img/channels4_profile.jpg" alt="Jesse Showalter">
+                <h2>Jesse Showalter</h2>
+                <p>Focusing on digital design and web development tutorials.</p>
+            </div>
+            <div class="card teacher-card">
+                <img src="./assets/img/unnamed2.jpg" alt="Bro Code">
+                <h2>Bro Code</h2>
+                <p>Self-improvement and programming tutorials.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <form class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" rows="5" placeholder="Write your message here" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    
+</body>
+</html>
