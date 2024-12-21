@@ -7,4 +7,6 @@ urlpatterns= [
     path('',views.index, name ='index'),
     path('enroll/<int:course_id>/', views.enroll_in_course, name='enroll_in_course'),
     path('course/<int:pk>' ,views.course_info, name='course'),
+    path('profile/' ,views.profile, name='profile'),
+    path('contact/', views.contact_view, name='contact'),
 ]

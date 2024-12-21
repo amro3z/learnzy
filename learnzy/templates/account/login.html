@@ -5,12 +5,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login1.css' %}">
     <title>Login</title>
 </head>
 <body>
     <div class="auth-container">
         <div class="form-wrapper">
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            
+            
             <h1 id="auth-title">Welcome Back</h1>
             <p id="auth-description">Please login to your account</p>
             
@@ -35,6 +45,11 @@
             <p class="switch">
                 Don’t have an account? <a href="{% url 'register' %}" id="toggle-form">Register here</a>
             </p>
+                    <!-- New Button for Instructor Login/Registration -->
+                    <div class="instructor-option" style="margin-top: 20px; text-align: center;">
+                        <p>Are you an instructor?</p>
+                        <a href="instructor_login.html" class="btn">Login/Register as Instructor</a>        
+            </div>
         </div>
     </div>
 
