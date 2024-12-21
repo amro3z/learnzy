@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Course</title>
-    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
 </head>
 
 <body>
@@ -24,6 +23,9 @@
             <a href="#contact">Contact</a>
             <a href="{% url 'profile' %}">Profile</a>
             {% if user.is_authenticated %}
+                {% if user.profile.is_instructor %}
+                     <a href="{% url 'instructor_dashboard' %}">Dashboard</a>
+                {% endif %}
             <a href="{% url 'logout' %}" class="logout-link">Logout</a>
             {% else %}
             <a href="{% url 'login' %}">Login</a>
@@ -31,7 +33,15 @@
             {% endif %}
         </div>
     </nav>
-
+    
+  <!-- Messages Section -->
+  {% if messages %}
+  <div class="messages">
+      {% for message in messages %}
+          <div class="alert {{ message.tags }}">{{ message }}</div>
+      {% endfor %}
+  </div>
+{% endif %}
     <!-- Hero Section -->
     <header class="hero" id="hero">
         <h1>Welcome Back!</h1>
@@ -69,13 +79,14 @@
     <!-- Contact Section -->
     <section id="contact">
         <h1>Contact Us</h1>
-        <form class="contact-form">
+        <form class="contact-form" method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
             <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
             <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
             <label for="message">Message:</label>
-            <textarea id="message" rows="5" placeholder="Write your message here" required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
             <input type="submit" value="Send Message">
         </form>
     </section>

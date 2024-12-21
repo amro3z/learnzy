@@ -1,12 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Courses(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
-    instructor_id = models.IntegerField()
-    category_id = models.IntegerField()
+    instructor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='home_courses')
     video_url = models.CharField(max_length=255, blank=True, null=True)
     image = models.ImageField(upload_to='courses_images/', blank=True, null=True)
     created_at = models.DateTimeField(blank=True, null=True)

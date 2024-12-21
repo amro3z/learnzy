@@ -14,7 +14,6 @@ def index(requset):
         }
     return render(requset ,'home/inedx.html', context)
 
-
 def course_info(request, pk):
     course_info = get_object_or_404(Courses, id=pk)
     is_enrolled = False
