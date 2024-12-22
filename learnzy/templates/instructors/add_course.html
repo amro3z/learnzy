@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -12,16 +11,25 @@
     <!-- Navigation -->
     <nav>
         <div>
-            <a href="#hero">Home</a>
-            <a href="#courses">Courses</a>
-            <a href="#teachers">Teachers</a>
-            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'index' %}#hero">Home</a>
+            <a href="{% url 'index' %}#about">About</a>
+            <a href="{% url 'index' %}#courses">Courses</a>
         </div>
-        <div>
-            <a href="#contact">Contact</a>
+        <div class="nav flex_around">
+            <a href="{% url 'index' %}#teachers">Teachers</a>
+            <a href="{% url 'index' %}#contact">Contact</a>
+            <a href="{% url 'profile' %}">Profile</a>
+            {% if user.is_authenticated %}
+                {% if user.profile.is_instructor %}
+                    <a href="{% url 'instructor_dashboard' %}">Dashboard</a>
+                {% endif %}    
+            <a href="{% url 'logout' %}" class="logout-link">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %}
         </div>
     </nav>
-
     <!-- Hero Section -->
     <header class="hero" id="hero">
         <h1>Welcome Back!</h1>
@@ -38,19 +46,13 @@
             <label for="description">Course Description</label>
             <input type="text" id="description" name="description" placeholder="Enter course description" required>
 
-            <label for="price">Course Price</label>
-            <input type="text" id="price" name="price" placeholder="Enter course price" required>
-
-            <label for="category_id">Category ID</label>
-            <input type="text" id="category_id" name="category_id" placeholder="Enter category ID" required>
-
             <label for="video_url">Course URL</label>
             <input type="url" id="video_url" name="video_url" placeholder="Enter course URL" required>
             
-            <label for="image_url">Course Image</label>
-            <input type="file" id="image_url" name="image_url" accept="image/*" required>
+            <label for="image">Course Image</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
             
-            <button type="submit">Add Course</button>
+            <button type="submit" class="button">Add Course</button>
         </form>
     </section>
 </body>
