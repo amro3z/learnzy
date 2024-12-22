@@ -78,16 +78,45 @@ Create a responsive and engaging platform for online learning, targeting individ
 ## Diagrams and Screenshots
 
 ### Sequence Diagram
-- (Screenshot here)
+- (![image](https://github.com/user-attachments/assets/2a943382-f7ca-4bab-9d21-1a07f0ee0830)
+)
 
 ### Class Diagram
-- (Screenshot here)
+- (![image](https://github.com/user-attachments/assets/4fb59373-e81a-405d-bdab-206ae8db5a96)
+)
 
 ### Use Case Diagram
-- (Screenshot here)
+- (![image](https://github.com/user-attachments/assets/1a48a812-2c4c-4105-a0f0-469b2d1cfda4)
+)
 
 ### Website Screenshots
-- (Screenshots here)
+- (![image](https://github.com/user-attachments/assets/73130d1f-24e7-46e3-a303-66a196229f8e)
+  )
+- (![image](https://github.com/user-attachments/assets/055cbe22-c356-4062-a7bb-4c70cb933023)
+)
+- (![image](https://github.com/user-attachments/assets/fa50e8eb-fade-40a9-9f44-2a8e8c797c94)
+)
+- (![image](https://github.com/user-attachments/assets/f634145b-1588-46c7-b6c5-7913d2b1139f)
+)
+- (![image](https://github.com/user-attachments/assets/ec5e537a-f441-471b-a3de-f63430fa2746)
+)
+- (![image](https://github.com/user-attachments/assets/cd622922-022a-4fd0-81f3-9948cfa4a865)
+  )
+- (![image](https://github.com/user-attachments/assets/7c255d0f-84cb-4f5c-8b45-f22e4093d36b)
+  )
+- (![image](https://github.com/user-attachments/assets/e0ff8902-1f31-4b17-bd61-327c9b282beb)
+  )
+
+- (![image](https://github.com/user-attachments/assets/4857ac3a-c0d7-407b-93c4-7cc084b32ae9)
+  )
+
+- (![image](https://github.com/user-attachments/assets/452d1e85-ef1b-406c-9994-8f2f7e562231)
+  )
+- (![image](https://github.com/user-attachments/assets/2ea70f60-e6e6-4f59-9d53-d3865d90a91a)
+)
+- (![image](https://github.com/user-attachments/assets/a76e51bb-f738-42eb-9fbe-bfbb2856fc4d)
+)
+
 
 ---
 
@@ -102,6 +131,8 @@ Create a responsive and engaging platform for online learning, targeting individ
 **Expected Result**:
 - Dashboard displayed if the user exists.
 - Error message "Invalid Username or password" if the user does not exist.
+- ![image](https://github.com/user-attachments/assets/736be30a-d94c-41c5-bfbe-30fd8a74ab2f)
+
 
 ---
 
@@ -114,6 +145,8 @@ Create a responsive and engaging platform for online learning, targeting individ
 **Expected Result**:
 - Redirect to the dashboard if sign-up is successful.
 - Error message for issues (e.g., duplicate username).
+- ![image](https://github.com/user-attachments/assets/8175cf1c-66f8-4344-b0f3-a39aebf52466)
+
 
 ---
 
@@ -126,6 +159,8 @@ Create a responsive and engaging platform for online learning, targeting individ
 **Expected Result**:
 - Confirmation message if enrollment is successful.
 - Error message for failure (e.g., invalid course ID).
+- ![image](https://github.com/user-attachments/assets/a5fdb2d5-50c2-4341-bb15-195fd30a1f5a)
+
 
 ---
 
@@ -137,6 +172,8 @@ Create a responsive and engaging platform for online learning, targeting individ
 **Expected Result**:
 - Video plays for enrolled students.
 - Prompt to enroll for non-enrolled students.
+- ![image](https://github.com/user-attachments/assets/60136a67-0189-41c0-a31a-658d8fff6c58)
+
 
 ---
 
@@ -149,6 +186,8 @@ Create a responsive and engaging platform for online learning, targeting individ
 **Expected Result**:
 - Confirmation message "Course added" for success.
 - Appropriate error message for failure.
+- ![image](https://github.com/user-attachments/assets/fbb8a2c3-db17-489a-8fd5-303955ef2cc5)
+
 
 ---
 
@@ -160,6 +199,8 @@ Create a responsive and engaging platform for online learning, targeting individ
 3. Select a course and click "Delete."  
 **Expected Result**:
 - Course is deleted.
+- ![image](https://github.com/user-attachments/assets/ab239bf7-79c5-46bd-99da-42e5d2b88e00)
+
 
 ---
 
@@ -171,6 +212,8 @@ Create a responsive and engaging platform for online learning, targeting individ
 3. Click the "Login" button.  
 **Expected Result**:
 - Error message “Invalid credentials” appears.
+- ![image](https://github.com/user-attachments/assets/7ae328ab-5910-41c0-8a1a-1c68d33faed6)
+
 
 ---
 
@@ -181,6 +224,8 @@ Create a responsive and engaging platform for online learning, targeting individ
 2. Navigate to the "Courses" section.  
 **Expected Result**:
 - All available courses are listed.
+- ![image](https://github.com/user-attachments/assets/a0d81ff8-0162-4809-be93-6aa204cd4f7e)
+
 
 ---
 
