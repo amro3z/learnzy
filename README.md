@@ -131,7 +131,8 @@ Create a responsive and engaging platform for online learning, targeting individ
 **Expected Result**:
 - Dashboard displayed if the user exists.
 - Error message "Invalid Username or password" if the user does not exist.
-- ![image](https://github.com/user-attachments/assets/736be30a-d94c-41c5-bfbe-30fd8a74ab2f)
+- ![image](![WhatsApp Image 2024-12-22 at 02 18 58_faf9bbd0](https://github.com/user-attachments/assets/de5dc7de-a41e-4c09-8122-2fe8e5e35007)
+)
 
 
 ---
