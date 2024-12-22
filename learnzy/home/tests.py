@@ -11,7 +11,7 @@ class HomeViewTests(TestCase):
         self.client.login(username='testuser', password='12345')
         response = self.client.get(reverse('index'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Welcome to Learnzy")
+        self.assertContains(response, "Welcome Back!")
 
 
     def test_enroll_in_course_view(self):
