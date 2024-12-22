@@ -6,19 +6,23 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseForbidden
 from .models import Profile, Courses
 from .forms import CourseForm
+
 def instructor_register_view(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         email = request.POST['email']
         
-        user = User.objects.create_user(username=username, password=password, email=email)
-        Profile.objects.create(user=user, is_instructor=True)
-        
-        messages.success(request, 'Instructor account created successfully!')
-        return redirect('instructor_login')
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username already exists. Please choose a different username.')
+        else:
+            user = User.objects.create_user(username=username, password=password, email=email)
+            Profile.objects.create(user=user, is_instructor=True)
+            messages.success(request, 'Instructor account created successfully!')
+            return redirect('instructor_login')
     
     return render(request, 'instructors/instructor_register.html')
+
 
 def instructor_login_view(request):
     if request.method == 'POST':
