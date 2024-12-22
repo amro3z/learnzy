@@ -47,22 +47,21 @@ def enroll_in_course(request, course_id):
     return redirect('course', pk=course_id)
 
 def profile(request):
-    # تأكد أن المستخدم مسجل الدخول
     if not request.user.is_authenticated:
-        return render(request, 'profile/profile.html', {'error': 'You need to log in to view this page.'})
+        return render(request, 'home/profile.html', {'error': 'You need to log in to view this page.'})
 
-    # المستخدم الحالي
+   
     user = request.user
 
-    # جلب الكورسات بناءً على username
-    enrollments = Enrollments.objects.filter(username=user.id)  # استخدام username الخاص بالمستخدم
-    enrolled_courses_ids = enrollments.values_list('course_id', flat=True)  # استخرج id الكورسات
-    enrolled_courses = Courses.objects.filter(id__in=enrolled_courses_ids)  # جلب الكورسات المرتبطة باستخدام id
+    
+    enrollments = Enrollments.objects.filter(username=user.id) 
+    enrolled_courses_ids = enrollments.values_list('course_id', flat=True)  
+    enrolled_courses = Courses.objects.filter(id__in=enrolled_courses_ids)  
 
-    # تمرير البيانات إلى القالب
+    
     context = {
-        'user': user,  # بيانات المستخدم
-        'enrolled_courses': enrolled_courses  # الكورسات المرتبطة
+        'user': user,  
+        'enrolled_courses': enrolled_courses  
     }
     return render(request, 'home/profile.html', context)
 
