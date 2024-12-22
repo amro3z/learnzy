@@ -15,13 +15,13 @@ class HomeViewTests(TestCase):
 
 
     def test_enroll_in_course_view(self):
-        course = Courses.objects.create(title="Test Course")
+        course = Courses.objects.create(title="Test Course", instructor=self.user)
         response = self.client.get(reverse('enroll_in_course', args=[course.id]))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Enroll in Test Course")
 
     def test_course_info_view(self):
-        course = Courses.objects.create(title="Test Course")
+        course = Courses.objects.create(title="Test Course", instructor=self.user)
         response = self.client.get(reverse('course', args=[course.id]))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Test Course")
