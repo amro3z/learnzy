@@ -15,7 +15,6 @@ jobs:
     services:
       mysql:
         image: mysql:8.0
-        
         env:
           MYSQL_ROOT_PASSWORD: 01028642003@Am
           MYSQL_DATABASE: learnzydb
