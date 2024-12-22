@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            flex-direction: column;
+        }
+        .form-container {
+            background-color: #1e1e1e;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+        .form-container h1 {
+            text-align: center;
+            color: #4db8ff;
+            margin-bottom: 1.5rem;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #b3b3b3;
+        }
+        .form-container input {
+            padding: 0.7rem;
+            margin-bottom: 1rem;
+            background-color: #2a2a2a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+        .form-container button {
+            padding: 0.8rem;
+            background-color: #4db8ff;
+            color: #121212;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .form-container button:hover {
+            background-color: #359ed8;
+        }
+        .form-container a {
+            color: #4db8ff;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            margin-top: 1rem;
+        }
+        .form-container a:hover {
+            text-decoration: underline;
+        }
+        .messages {
+            margin-bottom: 1rem;
+        }
+        .alert {
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .alert-success {
+            background-color: #4caf50;
+            color: #ffffff;
+        }
+        .alert-error {
+            background-color: #f44336;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Messages Section -->
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="form-container">
+        <h1>Instructor Login</h1>
+        <form method="POST" action="{% url 'instructor_login' %}">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <a href="{% url 'instructor_register' %}">Don’t have an account? Register</a>
+    </div>
+</body>
+</html>
