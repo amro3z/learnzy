@@ -231,5 +231,4 @@ Create a responsive and engaging platform for online learning, targeting individ
 ---
 
 ## Additional Links
-- **GitHub Repository**: ([Link here](https://github.com/amro3z/learnzy.git))  
-- **Meeting Link**: (https://nileuniversity.sharepoint.com/sites/Project_Meeting/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20241222_072337-Meeting%20Recording.mp4?web=1&referrer=Teams.TEAMS-ELECTRON&referrerScenario=MeetingChicletGetLink.view)
+ - **Meeting Link**: (https://nileuniversity.sharepoint.com/sites/Project_Meeting/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20241222_072337-Meeting%20Recording.mp4?web=1&referrer=Teams.TEAMS-ELECTRON&referrerScenario=MeetingChicletGetLink.view)
