@@ -50,10 +50,12 @@ jobs:
       env:
         DATABASE_URL: mysql://root:root@127.0.0.1:3306/learnzydb
       run: |
-        python learnzy/manage.py migrate
+        cd learnzy
+        python manage.py migrate
 
     - name: Run tests
       env:
         DATABASE_URL: mysql://root:root@127.0.0.1:3306/learnzydb
       run: |
-        python learnzy/manage.py test
+        cd learnzy
+        python manage.py test 
